@@ -6,7 +6,11 @@ const express = require('express');
 const { default: axios } = require("axios");
 const cors = require('cors');
 const path = require('path');
-const mockAPIResponse = require('./mockAPI.js')
+const mockAPIResponse = {
+    title: 'test json response',
+    message: 'this is a message',
+    time: 'now'
+}
 
 const PORT = 8081
 
@@ -43,4 +47,5 @@ app.listen(PORT, (error) => {
 
 module.exports = {
     app,
+    mockAPIResponse
 }

@@ -1,0 +1,31 @@
+// borrowed from https://github.com/emiribegic/evaluate-news-nlp/tree/main/src/client/styles
+$keycolor: rgb(253, 148, 192);
+
+body {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 75%;
+    margin: auto;
+    height: 100vh;
+}
+
+main {
+    padding: 2em;
+    text-align: center;
+    margin: 2rem;
+    background: rgba(196, 196, 196, 0.7);
+}
+
+p {
+    margin: 1rem auto;
+}
+
+
+
+section {
+    margin: 1rem auto;
+    text-align: center;
+}
