@@ -1,7 +1,7 @@
 const validUrl = require('valid-url');
+import { fetchData } from './api';
 
-
-const populateDivs = ({ data }) => {
+export const populateDivs = ({ data }) => {
     document.getElementById("agreement").innerHTML = `Agreement: ${data.agreement}`;
     document.getElementById("subjectivity").innerHTML = `Subjectivity: ${data.subjectivity}`;
     document.getElementById("confidence").innerHTML = `Confidence: ${data.confidence}`;
@@ -9,26 +9,8 @@ const populateDivs = ({ data }) => {
     document.getElementById("score_tag").innerHTML = `Score Tag: ${data.score_tag}`;
 }
 
-const fetchData = async (url = '', articleUrl) => {
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            credentials: 'same-origin',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({url : articleUrl})
-        });
 
-        return  await response.json();
-    } catch (error) {
-        alert(error);
-        return error
-    }
-};
-
-const handleSubmit = async (e) => {
+export const handleSubmit = async (e) => {
     e.preventDefault();
     const inputElement = document.getElementById('article-url');
     
@@ -43,4 +25,3 @@ const handleSubmit = async (e) => {
     }
 }
 
-export default handleSubmit
